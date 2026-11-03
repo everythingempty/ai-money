@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI money — your fingers are retiring</title>
+<meta name="description" content="Retail is the last money in the market still moved by fingers. Why that ends, how early it is, and what has to get built first. Starring Ken, 36, who has a mental note.">
+<meta property="og:title" content="AI money.">
+<meta property="og:description" content="Retail is the last money in the market still moved by fingers. Why that ends, how early it is, and what has to get built first. Starring Ken, 36, who has a mental note.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0c0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0c0a; --bg2:#15130f;
+  --ink:#f1ebdd; --ink2:#c9c2b2; --mute:#8f887a; --faint:#5c574d;
+  --gold:#e6b650; --rust:#cf5532; --line:#27241f;
+  --serif:'Newsreader','Iowan Old Style','Charter',Georgia,serif;
+  --sans:'Bricolage Grotesque','Inter',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:clamp(17px,1rem + .35vw,20px);line-height:1.6;font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:#141210}
+a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(230,182,80,.35)}
+a:hover{border-bottom-color:var(--gold)}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+header.hero{padding:14vh 0 6vh}
+.kicker{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--sans);font-weight:800;font-size:clamp(64px,16vw,148px);line-height:.86;letter-spacing:-.045em;margin:.12em 0 .22em;font-variation-settings:'opsz' 96}
+h1 .dot{color:var(--gold)}
+.deck{font-size:clamp(20px,1.2rem + .6vw,26px);line-height:1.35;color:var(--ink2);font-style:italic;max-width:36ch;margin:0}
+section{padding:7vh 0 2vh}
+.num{font-family:var(--sans);font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.1em}
+h2{font-family:var(--sans);font-weight:800;font-size:clamp(30px,2.2rem + 1vw,46px);line-height:1;letter-spacing:-.03em;margin:.25em 0 .8em}
+p{margin:0 0 1.2em}
+strong{font-weight:500;color:var(--ink)}
+.lead{font-size:1.08em}
+.tape{margin:1.6em 0 2em;border-top:1px solid var(--line)}
+.tape-head{display:flex;gap:10px;align-items:center;padding:12px 0 6px;font-family:var(--sans);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.tape-head .dot{width:8px;height:8px;border-radius:50%}
+.fingers .tape-head{color:var(--rust)} .fingers .dot{background:var(--rust)}
+.butler .tape-head{color:var(--gold)} .butler .dot{background:var(--gold)}
+.scene{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-top:1px dashed var(--line)}
+.scene time{font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.05em;padding-top:5px;text-transform:uppercase}
+.fingers .scene time{color:var(--rust)} .butler .scene time{color:var(--gold)}
+.scene p{margin:0}
+.pull{font-family:var(--sans);font-weight:800;font-size:clamp(24px,1.5rem + 1vw,34px);line-height:1.1;letter-spacing:-.02em;margin:1.6em 0;padding-left:18px;border-left:3px solid var(--gold)}
+.item{margin:0 0 1.5em}
+h3{font-family:var(--sans);font-weight:800;font-size:1.15em;letter-spacing:-.01em;margin:0 0 .25em;color:var(--ink)}
+ol.build{list-style:none;padding:0;margin:0;counter-reset:b}
+ol.build li{counter-increment:b;display:grid;grid-template-columns:56px 1fr;gap:14px;padding:1.1em 0;border-top:1px solid var(--line)}
+ol.build li::before{content:counter(b,decimal-leading-zero);font-family:var(--sans);font-weight:800;font-size:30px;line-height:1;color:var(--gold);letter-spacing:-.03em}
+ol.build li.last::before{color:var(--rust)}
+ol.build p{margin:0}
+figure.chart{margin:1.2em 0 2.2em;padding:22px 20px 18px;background:var(--bg2);border:1px solid var(--line);border-radius:6px}
+figcaption{font-family:var(--sans);font-weight:800;font-size:15px}
+.cg{display:grid;grid-template-columns:auto 1fr;gap:0 14px;padding-top:40px}
+.labels,.bars{display:grid;grid-auto-rows:40px;row-gap:18px;align-items:center}
+.labels div{font-family:var(--sans);font-weight:500;font-size:14px;color:var(--ink2);white-space:nowrap}
+.bars{position:relative}
+.bar-row{display:flex;align-items:center;gap:10px;height:40px}
+.bar{height:100%;border-radius:2px;min-width:4px}
+.bar.gold{background:var(--gold)} .bar.rust{background:var(--rust)}
+.val{font-family:var(--sans);font-weight:800;font-size:15px}
+.target{position:absolute;top:-14px;bottom:-10px;border-left:2px dashed var(--gold)}
+.target span{position:absolute;top:-34px;right:8px;width:150px;text-align:right;line-height:1.2;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.chart-note{font-size:.82em;color:var(--mute);margin:18px 0 0;line-height:1.5}
+.who{margin:1.4em 0}
+.obj{margin:1.6em 0 0;border-top:1px solid var(--line)}
+.obj div{padding:14px 0;border-bottom:1px solid var(--line)}
+.obj .q{font-family:var(--sans);font-weight:800;margin:0 0 .3em}
+.obj .a{color:var(--ink2);margin:0}
+.outro{font-size:1.12em;margin-top:2em}
+.refs{padding:6vh 0 4vh;border-top:1px solid var(--line);margin-top:6vh;font-size:.84em;color:var(--mute);line-height:1.5}
+.refs h2{font-size:22px;margin-bottom:1em}
+.refs ol{padding:0;list-style:none;margin:0}
+.refs li{display:grid;grid-template-columns:28px 1fr;gap:8px;margin:0 0 .9em}
+.refs .n{font-family:var(--sans);font-weight:800;color:var(--faint)}
+.refs a{color:var(--ink2);border-bottom-color:var(--line)}
+footer{padding:0 0 12vh;font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+@media (max-width:560px){
+  .scene{grid-template-columns:74px 1fr}
+  ol.build li{grid-template-columns:44px 1fr}
+  ol.build li::before{font-size:24px}
+  h1{font-size:clamp(60px,22vw,100px)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="kicker">An argument · 9 min · November 2026</span>
+  <h1>AI money<span class="dot">.</span></h1>
+  <p class="deck">Retail is the last money in the market still moved by fingers. Here's why that ends, how early it is, and what has to get built first. Starring Ken, 36, who has a mental note.</p>
+</header>
+
+<section id="ken">
+  <span class="num">01</span>
+  <h2>Meet Ken. Ken has a mental note.</h2>
+  <p class="lead">Ken is thirty-six. Mid-level at a logistics company, two kids, a mortgage that knows his name. He has about thirty grand that isn't the emergency fund and isn't the kids' money. "Play money," he calls it, with the confidence of a man who has never once watched it play. Some ETFs, four stocks he has opinions about, a bag of ETH and SOL, and a wallet with USDC in it from the last time he took profit and felt like a genius for eleven minutes.</p>
+  <p>Here is how Ken's money moves today.</p>
+
+  <div class="tape fingers">
+    <div class="tape-head"><span class="dot"></span>Fingers money</div>
+    <div class="scene"><time>7:40am</time><p>On the train. NVDA reports after the close. Ken has a view, and it's a good one: if they guide down, he's out of his calls and into the semis ETF. He makes a mental note. The mental note is very confident.</p></div>
+    <div class="scene"><time>10:00am</time><p>Meetings until 6:30. The mental note is dead by 10:15. Nobody attends the funeral.</p></div>
+    <div class="scene"><time>7:15pm</time><p>NVDA guides down. Ken is holding a toddler and a towel. By morning the calls are down 40%. He sells them at lunch the next day, at the low, in the three minutes between two calls, wearing the face of a man who was right about everything except the part where you have to actually do it.</p></div>
+    <div class="scene"><time>All year</time><p>The USDC from March is still in the wallet earning nothing, because moving it to the vault his friend mentioned means bridging and checking the TVL, and he keeps meaning to do it on the weekend. That was thirty weekends ago.</p></div>
+    <div class="scene"><time>Saturday</time><p>A friend posts a trade in the group chat and it's working. Ken wants it at half size. By the time he has the app open, the pair found, the size typed and the slippage fixed, the move is over and the friend is posting the screenshot.</p></div>
+  </div>
+
+  <p>One thing in Ken's financial life works flawlessly: $200 a week into an index ETF, automatically. It's the best-behaved part of his portfolio, and it's the only part his fingers never touch. Ken hasn't noticed this. Ken is busy.</p>
+  <p><strong>Now rewind the Tuesday.</strong></p>
+
+  <div class="tape butler">
+    <div class="tape-head"><span class="dot"></span>AI money</div>
+    <div class="scene"><time>7:40am</time><p>The train. Ken types one message: "If NVDA guides down tonight, dump my calls at the open and put half into SMH. If they guide in line, do nothing." His butler reads it back — what it understood, the most it will spend, where the off switch is — and asks for one press. Ken presses. Train arrives.</p></div>
+    <div class="scene"><time>7:15pm</time><p>The butler reads the release, decides "guides down" is indeed what just happened, queues the exit for the open, sells, buys SMH, and sends a two-line receipt. Ken is bathing the kids. He finds out he was right the way you should find out you were right: later, holding a towel, mildly smug.</p></div>
+    <div class="scene"><time>Months ago</time><p>He'd also said, once: "Keep $500 of USDC liquid, park the rest in the best stablecoin yield above $100M TVL, and move it if something better shows up." It bridged. It deposited. It tells him once a month what it earned, in a sentence, not a dashboard.</p></div>
+    <div class="scene"><time>Saturday</time><p>Same group chat. "@butler do what he did, half size, $300 max." Done before the next message lands. Ken posts the screenshot this time.</p></div>
+  </div>
+
+  <p>That's AI money. Not a robot picking stocks for him. Not a strategy builder with forty toggles. His own ideas, said once, in English, then actually carried out: at the right moment, across whatever venue or chain it takes, inside a limit he set, while he lives his actual life.</p>
+
+  <blockquote class="pull">Fingers money moves when you're looking at it. AI money moves when it should.</blockquote>
+
+  <p>Three things happened in that story that no stop order, grid bot or robo-advisor has ever done. It understood a condition written in words ("guides down"). It did several steps in a row, across venues and chains, each gated on the last. And it stayed inside a budget without asking permission every time. If you need the labels: systematic, multi-step, conditional, supervised. Ken doesn't need the labels. Ken needs the Tuesday.</p>
+</section>
+
+<section id="why">
+  <span class="num">02</span>
+  <h2>Why this is inevitable, not just possible</h2>
+  <p class="lead">Three things changed in eighteen months. One thing never changes.</p>
+
+  <div class="item">
+    <h3>The sentence is the program.</h3>
+    <p>Everything Ken wanted is a small program. "If this, then that." "Watch this, move that." For twenty years the only retail traders who had programs were the ones who could write MQL5 at midnight or configure a grid bot without crying, and that was never more than a few percent of anyone. Now the model writes the strategy, the checker and the schedule. The cost of turning an intention into something that executes went from "hire a developer" to "finish your sentence."</p>
+  </div>
+  <div class="item">
+    <h3>Every venue built a door this year.</h3>
+    <p>Between November 2025 and September 2026 a door for agents opened at Alpaca, eToro, Public, Robinhood, Coinbase, Webull, Binance, OKX, Bitget, cTrader for the FX crowd and Phantom for the wallet crowd. A year ago there were a couple of developer-grade hatches. Now there's a door at every place Ken keeps money, and the venues are competing on whose agent gets through it first.</p>
+  </div>
+  <div class="item">
+    <h3>Humans are lazy, and the lazy path always wins.</h3>
+    <p>Nobody stopped phoning their broker because the website was more powerful. They stopped because it was less effort. Then the app beat the website. Now a sentence beats the app. Look at the one piece of automation ordinary investors ever adopted in numbers: the recurring buy, the laziest instrument in finance and the only one that works for Ken. Robo-advisors, meanwhile, stalled below 1% of the world's wealth, because they made you fill in a questionnaire and then gave you nothing to do. Chat asks you nothing you weren't already about to say, and does the one thing people actually want, which is the doing.</p>
+  </div>
+  <div class="item">
+    <h3>And the constant: fingers are bad at money.</h3>
+    <p>They panic, they forget, they chase, they get bored. Retail's share of US stock trading went from 35% in April 2025 to 9% in October 2026, not because people got poorer but because they got scared and found a football parlay. In India, where the regulator actually counts, 88% of individual derivatives traders lost money in the year to March, about ten billion dollars between them, while 99% of the profit on the other side was made by firms running code. Institutions crossed from fingers to systems between 2003 and 2009 and have not pressed a button since. Retail is the last unsystematic money in the market. The only thing keeping it that way was the cost of becoming systematic. That cost just went to zero.</p>
+  </div>
+</section>
+
+<section id="early">
+  <span class="num">03</span>
+  <h2>How early we are. One chart.</h2>
+
+  <figure class="chart">
+    <figcaption>Share of trading done by systems, not fingers</figcaption>
+    <div class="cg">
+      <div class="labels"><div>Institutions</div><div>Retail, today</div></div>
+      <div class="bars">
+        <div class="target" style="left:80%"><span>where retail ends up</span></div>
+        <div class="bar-row"><div class="bar gold" style="width:80%"></div><span class="val">≈80%</span></div>
+        <div class="bar-row"><div class="bar rust" style="width:1%"></div><span class="val">≈1%</span></div>
+      </div>
+    </div>
+    <p class="chart-note">Institutions: about 80% of US stock trading has been algorithmic since 2009. Retail: about 1%, nearly all of it the old kind (recurring buys, robo-advisors, a few bots). Agents are a rounding error inside the rounding error. Workings in refs 4 and 5.</p>
+  </figure>
+
+  <p>Half a percent of Robinhood's customers have opened an agentic account, and they keep about a thousand dollars in it. That's the entire new category, measured honestly.</p>
+  <p>That's not the weak spot. That's the pitch. In 1997, 17% of US retail trades happened online. In 1998 Merrill Lynch's brokerage chief called do-it-yourself online investing "a serious threat to Americans' financial health." In 1999 it was 48% of retail trades, and Merrill launched online trading. Once the interface exists, the crossing takes a few years, not a few decades. The distance between 1% and 80% is not a hole in the thesis. It's the market.</p>
+</section>
+
+<section id="build">
+  <span class="num">04</span>
+  <h2>What has to get built. In this order.</h2>
+  <p class="lead">The venues built the doors. Everything between Ken's sentence and a safe execution is still missing.</p>
+
+  <ol class="build">
+    <li><div><h3>Trust primitives.</h3><p>A limit the agent physically cannot cross, enforced under the model, not in the prompt: which assets, how much per order, how much per day, when it expires, a kill switch, a preview before anything moves, a press to confirm when money leaves. Ken gives an agent $1,000 until he trusts it and $10,000 after. Whoever earns that second step wins everything downstream of it.</p></div></li>
+    <li><div><h3>Deterministic execution.</h3><p>Let the model plan. Let something boring execute: orders that can't double-fire, slippage caps, retries, an unwind when step three of four fails. A clever plan executed approximately loses to a dumb plan executed exactly. The India numbers aren't about brilliance. The side that wins is the side with a system.</p></div></li>
+    <li><div><h3>Conditional instructions.</h3><p>"If NVDA guides down" is a standing order, not a trade. Something has to be awake at 7:15pm, watching prices, the portfolio, the chain and the news, cheaply enough that a $200 trade can afford the watching. Today nearly every agent on earth acts only when a human opens the chat. That's a very expensive intern who only works while you're staring at him.</p></div></li>
+    <li><div><h3>Coding capability.</h3><p>The agent that can write and run its own code, a backtest, a monitor, a bespoke trigger, serves any idea instead of a menu. This is the why-now turned into a feature. The butler codes so Ken never has to.</p></div></li>
+    <li><div><h3>Economics.</h3><p>A $1,000 account cannot pay for frontier inference on every decision. The cut of the flow has to pay for the thinking, and the thinking has to get cheap: small models for the watching, big ones for the deciding.</p></div></li>
+    <li><div><h3>Reputation.</h3><p>Nobody delegates to a stranger. Agents and mandates need track records people can see. Copy-trading made strangers trustworthy with a leaderboard; this needs the same, so that "approve every trade" becomes "approve the exceptions" because of evidence, not because a default flipped.</p></div></li>
+    <li><div><h3>Onchain, instead of regulation.</h3><p>The alternative on traditional rails is years of asking the SEC who's liable when a model places a bad order. Congress sent the first letter in June 2026. There is still no rule. Onchain, the questions mostly answer themselves: a spending limit is a smart-account policy, not a terms-of-service paragraph; a four-step trade across venues is one transaction; every action is a public receipt; the agent's identity is a wallet; and there is no broker in the middle whose lawyers have to decide whether the model made a "recommendation." The money is going there anyway: stablecoins, tokenized stocks on Robinhood in Europe, stock perps on Hyperliquid, four hundred billion dollars of real-world-asset perps on crypto exchanges in September alone. So don't lobby for agent rules in the old system. Build the butler where the rules are already code, and let the money come to it.</p></div></li>
+    <li class="last"><div><h3>The one that matters most: a product a lazy person will actually use.</h3><p>Every item above can be shipped as a dashboard with forty settings, and it will be used by the same 2% who ran bots in 2015. The point is the other 98%. One app. One chat. Say it once. The agent asks its two follow-up questions, shows you what it's about to do, and does it. No strategy builder. No API keys. No "bring your own model." If Ken has to configure it, Ken will not do it. Ken will keep the recurring buy and nothing else, exactly like today.</p></div></li>
+  </ol>
+</section>
+
+<section id="who">
+  <span class="num">05</span>
+  <h2>Two kinds of trader. One butler.</h2>
+  <p class="lead">"People don't want AI making their money decisions." Gartner says 11% of American consumers would let an AI decide a purchase. Two kinds of people trade on the side, and that number is wrong about both of them.</p>
+
+  <div class="who">
+    <h3>The Spreadsheet Guy.</h3>
+    <p>Reads the filings. Keeps a model. Knows exactly what he's up against, which is desks with code, data and no need for sleep, and has wanted a quant team his entire life. Now he has one: an agent that watches every market, writes and backtests his rules, executes without a pulse and reports back. He isn't outsourcing his decisions. He's finally allowed to carry them out properly. For him, AI money means the asymmetry closes.</p>
+  </div>
+  <div class="who">
+    <h3>The Group Chat Guy.</h3>
+    <p>Wants to buy whatever the meme is, copy a friend at half size, bet the earnings, feel something on a Saturday. Has been told to be more disciplined and does not care. He doesn't need a quant team. He needs a butler. "Do what he did, half size." "Buy $50 of whatever Elon tweets about in the next hour." "Sell half if it doubles." The idea stays his. The dopamine stays his. The butler eats the twelve taps, the wrong chain, the fat finger and the stop he forgot to set. For him, AI money means the distance between the idea and the trade goes to zero, in the same chat the idea came from.</p>
+  </div>
+
+  <blockquote class="pull">The pro wants limits so the agent can't wreck his plan. The degen needs limits so Saturday can't wreck his month. The pro wants a track record to trust the agent. The degen wants a leaderboard to trust his friend. One butler. Two moods.</blockquote>
+
+  <p>The rest of the objections, quickly.</p>
+  <div class="obj">
+    <div><p class="q">"Bots have existed for twenty years."</p><p class="a">They required you to code them, and they weren't fun. Both fixed.</p></div>
+    <div><p class="q">"Agentic accounts are toy money."</p><p class="a">So were online brokerage accounts in 1997. Watch the median balance, not the headline.</p></div>
+    <div><p class="q">"If 88% lose with fingers, won't they lose faster with agents?"</p><p class="a">With a bot and no limits, yes, spectacularly. With a mandate, the limit is the whole point. The side of the Indian data that wins is the side with rules.</p></div>
+    <div><p class="q">"Why not wait for the regulators?"</p><p class="a">Because the money is leaving for a place where the rules are code, and the butler should be standing there when it arrives.</p></div>
+  </div>
+
+  <p class="outro">AI money isn't a new asset class or a new strategy. It's the end of a job Ken never applied for: unpaid, part-time, emotional execution desk for his own savings. He keeps the ideas. The fingers retire.</p>
+</section>
+
+<section class="refs" id="refs">
+  <h2>References and workings</h2>
+  <ol>
+    <li><span class="n">1</span><span>Ken is a composite, not a customer.</span></li>
+    <li><span class="n">2</span><span>Retail share of US equity volume: ~35% peak in April 2025 (Reuters, via <a href="https://blog.firstrade.com/blog/2026/retail-investors-are-trading-at-record-levels-in-2026">Firstrade</a>); 9% on 26 October 2026, the lowest since 2020 (<a href="https://finance.yahoo.com/markets/article/why-retail-investor-trading-has-fallen-off-a-cliff-152604818.html">Goldman Sachs, via Yahoo Finance</a>).</span></li>
+    <li><span class="n">3</span><span>India: <a href="https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf">SEBI, Profitability of Individual Traders in the Equity Derivatives Segment, FY25–FY26</a> (August 2026). 87.7% of individual traders lost money in FY26; net loss ₹91,685 crore, about $10.5B at ₹87 to the dollar; 99% of the gross profit of foreign portfolio investors and proprietary desks came from entities that placed at least one algorithmic order; 86% of FPIs traded through algos against 15% of individuals, a figure SEBI itself says is inflated by brokers' auto-square-offs.</span></li>
+    <li><span class="n">4</span><span>"Institutions ≈80%": algorithmic trading reached about 70% of US equity volume by 2009 (<a href="https://www.chicagofed.org/-/media/publications/chicago-fed-letter/2010/cflmarch2010-272-pdf.pdf">TABB Group, via the Chicago Fed</a>) and more than 80% of daily volume by the early 2010s (<a href="https://www.jefferies.com/wp-content/uploads/files/PrimeServices/JEFWhenTheMarketMovesTheMarket.pdf">Jefferies</a>), from under 20% in 2003. Rounded to 80.</span></li>
+    <li><span class="n">5</span><span>"Retail ≈1%": robo-advised assets about $2.06T (<a href="https://www.statista.com/forecasts/1553433/value-of-robo-advisors-assets-under-management-in-the-worldwide/">Statista</a>) over $333T of global household financial wealth (<a href="https://www.bcg.com/publications/2026/global-wealth-growth-in-an-era-of-reordering">BCG Global Wealth Report 2026</a>) is 0.6%; rule-bot users are low single digits of percent (Pionex's 5M users against 774M crypto owners, per <a href="https://coinlaw.io/ai-trading-bot-statistics/">CoinLaw</a> and <a href="https://crypto.com/en/research/crypto-market-sizing-report-h1-2026">Crypto.com</a>); Robinhood's 150,000 agentic accounts are 0.5% of its 28.7M funded customers, and they held about $100M across roughly 100,000 accounts in Q2 2026, about $1,000 each (<a href="https://robinhood.com/us/en/newsroom/hood-summit-2026/">Robinhood, 29 Sep 2026</a>; <a href="https://www.sec.gov/Archives/edgar/data/1783879/000178387926000164/q32026robinhoodexhibit991.htm">Q3 2026 results</a>; <a href="https://r40.io/radar/public-20k-agents-is-10000-each/">R40</a>). Summed and rounded to "about 1%". Different denominators, deliberately: the point is the order of magnitude.</span></li>
+    <li><span class="n">6</span><span>Online brokerage: the online share of US individual investors' stock trades went from 8% in 1996 to 17% in 1997, 37% in 1998 and 48% in 1999; Merrill Lynch's July 1998 "serious threat to Americans' financial health" and June 1999 launch (<a href="https://silo.tips/download/brokercom-graduate-school-of-business-stanford-university">Stanford GSB case EC-13, "Broker.com"</a>; <a href="https://www.sec.gov/pdf/cybrtrnd.pdf">SEC, "On-Line Brokerage", 1999</a>).</span></li>
+    <li><span class="n">7</span><span>Recurring buys as the one automation ordinary investors adopted at scale: eToro's 10,000-investor Retail Investor Beat (<a href="https://www.etoro.com/news-and-analysis/etoro-updates/etoro-enhances-long-term-investing-offering-with-launch-of-recurring-investments-feature/">May 2025</a>); BlackRock's People &amp; Money 2025 found 38% of US investors want a recurring plan. The robo stall: <a href="https://www.condorcapital.com/digital-advice-report/reports/robo-industry-2026-2q-2026/">Condor Capital, Robo Industry 2026</a>.</span></li>
+    <li><span class="n">8</span><span>The 2026 agent rails, from Alpaca's MCP server (November 2025) to Robinhood Agents (29 September 2026): <a href="https://fensory.com/research/state-of-agentic-trading-q3-2026">Fensory, State of Agentic Trading Q3 2026</a>, plus the venues' own announcements.</span></li>
+    <li><span class="n">9</span><span>Regulation: no SEC or FINRA rule addresses third-party agents placing retail orders. <a href="https://www.finra.org/sites/default/files/2025-12/2026-annual-regulatory-oversight-report.pdf">FINRA's 2026 Annual Regulatory Oversight Report</a> lists the risks; the <a href="https://foster.house.gov/sites/evo-subsites/foster-evo.house.gov/files/evo-media-document/foster_sherman-request-for-information-re-agentic-trading-6.23.2026.pdf">Foster–Sherman letter to the SEC, 23 June 2026</a>, asks who is liable.</span></li>
+    <li><span class="n">10</span><span>Money moving onchain: about 1,500 stock tokens on Robinhood in the EU and the Robinhood Chain public testnet (<a href="https://investors.robinhood.com/static-files/fd90f575-5b4c-4cde-a16d-d114c920fb6a">Q3 2026 presentation</a>); real-world-asset perpetuals traded $413B in September 2026 (<a href="https://www.coindesk.com/research/exchange-review-september-2026">CoinDesk Research</a>); stock perps trade on Hyperliquid's HIP-3 markets.</span></li>
+    <li><span class="n">11</span><span>Gartner, <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-27-gartner-survey-finds-consumers-want-ai-shopping-help-but-not-ai-purchase-decisions">May 2026</a>: willingness to let AI make a purchase decision topped out at 11% of US consumers.</span></li>
+  </ol>
+</section>
+
+<footer>Numbers are rounded in the body · Workings above · Ken is a composite</footer>
+
+</div>
+</body>
+</html>
