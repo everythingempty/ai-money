@@ -139,11 +139,11 @@ figure.chart-card{
 }
 .play-btn:hover{color:var(--ink);border-color:var(--line2)}
 
-.slide-stage{position:relative;padding:22px 22px 18px;min-height:328px}
+.slide-stage{position:relative;padding:22px 22px 18px;min-height:452px}
 .slide{display:none}
-.slide.active{display:block;animation:slideIn .38s cubic-bezier(.22,1,.36,1) both}
+.slide.active{display:block;animation:slideIn .24s cubic-bezier(.22,1,.36,1) both}
 @keyframes slideIn{
-  from{opacity:0;transform:translateY(8px)}
+  from{opacity:.55;transform:translateY(4px)}
   to{opacity:1;transform:translateY(0)}
 }
 .slide-kicker{
@@ -178,13 +178,13 @@ figure.chart-card{
 .step-list{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:13.5px;line-height:1.42}
 .step{
   display:grid;grid-template-columns:62px 1fr;gap:8px;align-items:baseline;
-  opacity:0;transform:translateY(5px);
+  opacity:.35;transform:translateY(3px);
 }
-.slide.active .step{animation:stepPop .35s ease forwards}
-.slide.active .step:nth-child(1){animation-delay:.06s}
-.slide.active .step:nth-child(2){animation-delay:.22s}
-.slide.active .step:nth-child(3){animation-delay:.38s}
-.slide.active .step:nth-child(4){animation-delay:.54s}
+.slide.active .step{animation:stepPop .26s ease forwards}
+.slide.active .step:nth-child(1){animation-delay:.03s}
+.slide.active .step:nth-child(2){animation-delay:.10s}
+.slide.active .step:nth-child(3){animation-delay:.17s}
+.slide.active .step:nth-child(4){animation-delay:.24s}
 @keyframes stepPop{
   to{opacity:1;transform:translateY(0)}
 }
@@ -196,9 +196,9 @@ figure.chart-card{
 .bubble{
   background:#fff;border:1px solid var(--line);border-radius:8px;
   padding:9px 11px;font-family:var(--sans);font-size:13px;line-height:1.4;
-  color:var(--ink);opacity:0;transform:translateY(5px);
+  color:var(--ink);opacity:.35;transform:translateY(3px);
 }
-.slide.active .bubble{animation:stepPop .35s ease .08s forwards}
+.slide.active .bubble{animation:stepPop .24s ease .04s forwards}
 .bubble.cmd{border-color:var(--teal-bd);background:#fff}
 .bubble .who{
   display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;
@@ -208,9 +208,9 @@ figure.chart-card{
 
 .pipe{
   display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-  opacity:0;transform:translateY(5px);
+  opacity:.35;transform:translateY(3px);
 }
-.slide.active .pipe{animation:stepPop .35s ease .26s forwards}
+.slide.active .pipe{animation:stepPop .26s ease .14s forwards}
 .node{
   font-family:var(--mono);font-size:11px;font-weight:500;
   padding:4px 8px;border-radius:5px;border:1px solid var(--line2);
@@ -223,9 +223,9 @@ figure.chart-card{
 .metric-box{
   display:flex;justify-content:space-between;align-items:baseline;
   background:#fff;border:1px solid var(--line);border-radius:7px;
-  padding:10px 12px;opacity:0;transform:translateY(5px);
+  padding:10px 12px;opacity:.35;transform:translateY(3px);
 }
-.slide.active .metric-box{animation:stepPop .35s ease .08s forwards}
+.slide.active .metric-box{animation:stepPop .24s ease .04s forwards}
 .metric-box .amt{font-family:var(--mono);font-weight:600;font-size:16px;color:var(--ink)}
 .metric-box .apy{font-family:var(--mono);font-weight:600;font-size:12px;color:var(--rust)}
 
@@ -233,9 +233,9 @@ figure.chart-card{
   margin-top:auto;
   font-family:var(--mono);font-size:11.5px;font-weight:600;
   padding:7px 10px;border-radius:6px;
-  opacity:0;transform:translateY(4px);
+  opacity:.35;transform:translateY(3px);
 }
-.slide.active .outcome{animation:stepPop .35s ease .48s forwards}
+.slide.active .outcome{animation:stepPop .26s ease .26s forwards}
 .pane.fingers .outcome{background:var(--rust-bg);color:var(--rust)}
 .pane.ai .outcome{background:var(--teal-bg);color:var(--teal)}
 
@@ -244,12 +244,12 @@ figure.chart-card{
 }
 .pillars-mini div{
   background:#fff;border:1px solid var(--teal-bd);border-radius:6px;
-  padding:8px 10px;color:var(--ink2);opacity:0;transform:translateY(4px);
+  padding:8px 10px;color:var(--ink2);opacity:.35;transform:translateY(3px);
 }
-.slide.active .pillars-mini div{animation:stepPop .32s ease forwards}
-.slide.active .pillars-mini div:nth-child(1){animation-delay:.12s}
-.slide.active .pillars-mini div:nth-child(2){animation-delay:.26s}
-.slide.active .pillars-mini div:nth-child(3){animation-delay:.4s}
+.slide.active .pillars-mini div{animation:stepPop .24s ease forwards}
+.slide.active .pillars-mini div:nth-child(1){animation-delay:.05s}
+.slide.active .pillars-mini div:nth-child(2){animation-delay:.12s}
+.slide.active .pillars-mini div:nth-child(3){animation-delay:.19s}
 .pillars-mini strong{color:var(--teal);font-weight:700}
 
 .show-foot{
@@ -273,7 +273,7 @@ figure.contrast{
   margin:2.2em 0 2.4em;
 }
 .contrast-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;
 }
 .contrast-card{
   background:var(--paper);
@@ -584,7 +584,7 @@ footer{
         </div>
         <div class="contrast-body">
           <div class="contrast-tag">The pro retail trader</div>
-          <h3>Best-in-class setup, without the setup</h3>
+          <h3>A pro setup, without the setup</h3>
           <p>Four monitors, spreadsheets, price alerts, and Python scripts taped together to keep up with institutions that never sleep. That cockpit is already a hand-built agent; a real agent puts it in his pocket without him babysitting it.</p>
         </div>
       </div>
@@ -595,7 +595,7 @@ footer{
         </div>
         <div class="contrast-body">
           <div class="contrast-tag">The social phone trader</div>
-          <h3>Best-in-class butler, all on one phone</h3>
+          <h3>A butler, all on one phone</h3>
           <p>Lives in group chats on one phone and just wants dopamine and fun. He does not want a desktop cockpit or a lecture; he wants one app that turns any crazy idea into an immediate trade and remembers the stop-loss he always forgets.</p>
         </div>
       </div>
