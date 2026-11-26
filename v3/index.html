@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI will move all retail money. Right now, we are still sub 1%.</title>
-<meta name="description" content="Around 80% of US equity volume has been algorithmic since 2009. Yet normal retail still trade with fingers tapping the screen. Why AI money is inevitable and what needs to be built.">
-<meta property="og:title" content="AI will move all retail money. Right now, we are still sub 1%.">
-<meta property="og:description" content="Around 80% of US equity volume has been algorithmic since 2009. Yet normal retail still trade with fingers tapping the screen.">
+<title>AI money will be 100% of money. Today, we are still sub 1%.</title>
+<meta name="description" content="If humans aren't writing code by hand anymore, we can't imagine a future where we're still moving money by tapping through apps one trade at a time.">
+<meta property="og:title" content="AI money will be 100% of money. Today, we are still sub 1%.">
+<meta property="og:description" content="If humans aren't writing code by hand anymore, we can't imagine a future where we're still moving money by tapping through apps one trade at a time.">
 <meta property="og:type" content="article">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f5f3ec">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@ a:hover{border-bottom-color:var(--teal)}
 .wrap{max-width:740px;margin:0 auto;padding:0 24px}
 
 /* ── Header ────────────────────────────────────────────────────────── */
-header.hero{padding:9vh 0 4vh}
+header.hero{padding:9vh 0 3.8vh}
 .meta{
   display:flex;justify-content:space-between;align-items:center;
   font-family:var(--sans);font-weight:700;font-size:11.5px;
@@ -73,7 +73,7 @@ strong{font-weight:500;color:var(--ink)}
 
 /* ── Editorial Chart ──────────────────────────────────────────────── */
 figure.chart-card{
-  margin:2em 0 2.4em;
+  margin:1.8em 0 2.4em;
   padding:24px 24px 18px;
   background:var(--paper);
   border:1px solid var(--line);
@@ -97,9 +97,9 @@ figure.chart-card{
 .sw.r{background:var(--rust)}
 .chart-svg{width:100%;height:auto;display:block;overflow:visible}
 
-/* ── Visual Graphic Animation Stage ───────────────────────────────── */
+/* ── Illustrated Ken Slideshow ────────────────────────────────────── */
 .show-wrap{
-  margin:1.5em 0 2.5em;
+  margin:1.4em 0 2.5em;
   background:var(--paper);
   border:1px solid var(--line);
   border-radius:10px;
@@ -128,58 +128,52 @@ figure.chart-card{
 }
 .play-btn:hover{color:var(--ink);border-color:var(--line2)}
 
-.slide-stage{padding:20px 20px 18px;min-height:336px}
+.slide-stage{position:relative}
 .slide{display:none}
 .slide.active{display:block}
-.versus{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.visual-pane{
-  border-radius:8px;padding:14px 14px 12px;
-  border:1px solid var(--line);background:var(--bg);
-  display:flex;flex-direction:column;gap:10px;
-}
-.visual-pane.fingers{border-color:var(--rust-bd);background:rgba(184,74,50,.035)}
-.visual-pane.ai{border-color:var(--teal-bd);background:rgba(28,92,82,.04)}
-.pane-head{
-  display:flex;align-items:center;justify-content:space-between;
+
+.panel-strip{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line);
   font-family:var(--sans);font-weight:800;font-size:11px;
   letter-spacing:.11em;text-transform:uppercase;
 }
-.pane-head span{display:inline-flex;align-items:center;gap:7px}
-.visual-pane.fingers .pane-head{color:var(--rust)}
-.visual-pane.ai .pane-head{color:var(--teal)}
+.panel-strip div{
+  padding:9px 16px;display:flex;align-items:center;gap:7px;
+}
+.panel-strip .left{color:var(--rust);background:rgba(184,74,50,.04);border-right:1px solid var(--line)}
+.panel-strip .right{color:var(--teal);background:rgba(28,92,82,.045)}
 .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
-.visual-pane.fingers .dot{background:var(--rust)}
-.visual-pane.ai .dot{background:var(--teal)}
-.tag-mini{
-  font-family:var(--mono);font-size:10px;font-weight:500;
-  letter-spacing:.04em;opacity:.85;
+.panel-strip .left .dot{background:var(--rust)}
+.panel-strip .right .dot{background:var(--teal)}
+
+.art-box{
+  background:#faf7f0;
+  aspect-ratio:16/9;
+  width:100%;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.art-box img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  mix-blend-mode:multiply;
 }
 
-.gfx{width:100%;height:auto;display:block}
-.pane-foot{
-  font-family:var(--mono);font-size:11.5px;font-weight:600;
-  padding:7px 10px;border-radius:6px;text-align:center;
+.caption-split{
+  display:grid;grid-template-columns:1fr 1fr;
+  font-family:var(--sans);font-size:13.5px;line-height:1.42;
 }
-.visual-pane.fingers .pane-foot{background:var(--rust-bg);color:var(--rust)}
-.visual-pane.ai .pane-foot{background:var(--teal-bg);color:var(--teal)}
-
-/* SVG micro-animations */
-.dash-flow{stroke-dasharray:5 5;animation:dashMove 1.4s linear infinite}
-@keyframes dashMove{to{stroke-dashoffset:-20}}
-.pulse-ring{transform-box:fill-box;transform-origin:center;animation:pulseOut 1.8s ease-out infinite}
-@keyframes pulseOut{
-  0%{transform:scale(.85);opacity:.85}
-  100%{transform:scale(1.65);opacity:0}
-}
-.blink-slow{animation:blinkS 2s ease-in-out infinite}
-@keyframes blinkS{0%,100%{opacity:1}50%{opacity:.45}}
+.caption-split div{padding:13px 16px}
+.caption-split .left{color:var(--ink2);border-right:1px solid var(--line);background:rgba(184,74,50,.02)}
+.caption-split .right{color:var(--ink);font-weight:500;background:rgba(28,92,82,.025)}
 
 .show-foot{
   display:flex;justify-content:space-between;align-items:center;gap:12px;
-  padding:11px 18px;border-top:1px solid var(--line);background:var(--bg);
+  padding:12px 16px;border-top:1px solid var(--line);background:var(--bg);
 }
 .show-caption{
-  font-family:var(--sans);font-weight:700;font-size:13.5px;color:var(--ink);
+  font-family:var(--sans);font-weight:800;font-size:14px;color:var(--ink);
+  letter-spacing:-.01em;
 }
 .show-caption em{font-style:normal;color:var(--teal)}
 .nav-btns{display:flex;gap:6px;flex-shrink:0}
@@ -212,9 +206,9 @@ footer{
   text-transform:uppercase;color:var(--faint);
 }
 
-@media (max-width:640px){
-  .versus{grid-template-columns:1fr}
-  .slide-stage{min-height:540px;padding:16px 14px}
+@media (max-width:600px){
+  .panel-strip div{padding:8px 10px;font-size:10px}
+  .caption-split div{padding:11px 10px;font-size:12.5px}
   .show-foot{flex-direction:column;align-items:flex-start}
   figure.chart-card{padding:18px 16px}
 }
@@ -228,13 +222,13 @@ footer{
     <span class="tag">AI Money</span>
     <span class="date">November 2026</span>
   </div>
-  <h1>AI will move all retail money.<br>Right now, we are still sub 1%.</h1>
+  <h1>AI money will be 100% of money.<br>Today, we are still sub 1%.</h1>
 </header>
 
 <article>
-  <p>Around 80% of US equity volume has been algorithmic since 2009. Hedge funds and trading desks run systematic models and bots around the clock. Yet normal retail still trade stocks, crypto, and forex with fingers tapping the screen. If humans aren't writing code by hand anymore, we can't imagine a future where we're still moving money by tapping through apps one trade at a time.</p>
+  <p>If humans aren't writing code by hand anymore, we can't imagine a future where we're still moving money by tapping through apps one trade at a time.</p>
 
-  <!-- ── Clean Editorial SVG Chart (footnotes moved to References) ──── -->
+  <!-- ── Clean Editorial SVG Chart ──────────────────────────────────── -->
   <figure class="chart-card" id="chart">
     <div class="chart-top">
       <div class="chart-title">Share of orders placed by software vs human fingers</div>
@@ -244,7 +238,7 @@ footer{
       </div>
     </div>
 
-    <svg class="chart-svg" viewBox="0 0 660 222" role="img" aria-label="Bar chart comparing institutional automated execution at approximately 80 percent versus active retail trading today at under 1 percent, highlighting the opportunity gap from sub 1 percent to 80 percent.">
+    <svg class="chart-svg" viewBox="0 0 660 224" role="img" aria-label="Bar chart comparing institutional automated execution at approximately 80 percent versus active retail trading today at under 1 percent, with the gap extending toward 100 percent.">
       <defs>
         <pattern id="gapHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <line x1="0" y1="0" x2="0" y2="8" stroke="#1c5c52" stroke-opacity="0.11" stroke-width="1.5"/>
@@ -256,16 +250,16 @@ footer{
 
       <!-- Gridlines: plot x=122 to x=622 (500px = 100%) -->
       <g stroke="#e6e1d6" stroke-width="1">
-        <line x1="122" y1="26" x2="122" y2="184"/>
-        <line x1="222" y1="26" x2="222" y2="184" stroke-dasharray="2 3"/>
-        <line x1="322" y1="26" x2="322" y2="184" stroke-dasharray="2 3"/>
-        <line x1="422" y1="26" x2="422" y2="184" stroke-dasharray="2 3"/>
-        <line x1="622" y1="26" x2="622" y2="184" stroke-dasharray="2 3"/>
+        <line x1="122" y1="26" x2="122" y2="186"/>
+        <line x1="222" y1="26" x2="222" y2="186" stroke-dasharray="2 3"/>
+        <line x1="322" y1="26" x2="322" y2="186" stroke-dasharray="2 3"/>
+        <line x1="422" y1="26" x2="422" y2="186" stroke-dasharray="2 3"/>
+        <line x1="522" y1="26" x2="522" y2="186" stroke-dasharray="2 3"/>
       </g>
 
-      <!-- 80% target line -->
-      <line x1="522" y1="18" x2="522" y2="188" stroke="#1c5c52" stroke-width="1.5" stroke-dasharray="4 4"/>
-      <text x="516" y="13" text-anchor="end" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" letter-spacing="0.06em">WHERE RETAIL ENDS UP (80%)</text>
+      <!-- 100% end-state line -->
+      <line x1="622" y1="18" x2="622" y2="190" stroke="#1c5c52" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="616" y="13" text-anchor="end" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" letter-spacing="0.06em">END STATE (100%)</text>
 
       <!-- Row 1: Institutions -->
       <text x="0" y="64" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="700">Institutions</text>
@@ -274,273 +268,100 @@ footer{
       <text x="136" y="68" fill="#f5f3ec" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" opacity="0.92">Crossed 20% → 80% in 2003–2009</text>
       <text x="534" y="70" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="18" font-weight="800">≈80%</text>
 
-      <!-- Row 2: Retail today + gap -->
+      <!-- Row 2: Retail today + full gap to 100% -->
       <text x="0" y="136" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="700">Retail, today</text>
       <text x="0" y="152" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="10">Active trading</text>
 
-      <rect x="129" y="114" width="393" height="44" rx="4" fill="url(#gapHatch)" stroke="#1c5c52" stroke-opacity="0.22" stroke-dasharray="3 3"/>
-      <line x1="178" y1="136" x2="508" y2="136" stroke="#1c5c52" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrowTeal)"/>
-      <rect x="256" y="124" width="178" height="24" rx="12" fill="#faf8f3" stroke="#1c5c52" stroke-opacity="0.25"/>
-      <text x="345" y="140" text-anchor="middle" fill="#1c5c52" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="800">THE MARKET: &lt;1% → 80%</text>
+      <rect x="129" y="114" width="493" height="44" rx="4" fill="url(#gapHatch)" stroke="#1c5c52" stroke-opacity="0.22" stroke-dasharray="3 3"/>
+      <line x1="180" y1="136" x2="608" y2="136" stroke="#1c5c52" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrowTeal)"/>
+      <rect x="298" y="124" width="194" height="24" rx="12" fill="#faf8f3" stroke="#1c5c52" stroke-opacity="0.25"/>
+      <text x="395" y="140" text-anchor="middle" fill="#1c5c52" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="800">THE MARKET: &lt;1% → 100%</text>
 
       <!-- Sub-1% terracotta sliver -->
       <rect x="122" y="114" width="5" height="44" rx="2" fill="#b84a32"/>
       <text x="134" y="142" fill="#b84a32" font-family="Bricolage Grotesque, sans-serif" font-size="17" font-weight="800">&lt;1%</text>
 
       <!-- Sub-callout -->
-      <line x1="124.5" y1="161" x2="124.5" y2="173" stroke="#b84a32" stroke-width="1"/>
-      <line x1="124.5" y1="173" x2="135" y2="173" stroke="#b84a32" stroke-width="1"/>
-      <text x="140" y="176" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="500">AI agents today: ~0.5% of Robinhood accounts (~$1k each) · see refs 1–3</text>
+      <line x1="124.5" y1="161" x2="124.5" y2="174" stroke="#b84a32" stroke-width="1"/>
+      <line x1="124.5" y1="174" x2="135" y2="174" stroke="#b84a32" stroke-width="1"/>
+      <text x="140" y="177" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="500">AI agents today: ~0.5% of Robinhood accounts (~$1k each) · see refs 1–3</text>
 
       <!-- X-axis ticks -->
       <g fill="#9e978a" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="middle">
-        <text x="122" y="206">0%</text>
-        <text x="222" y="206">20%</text>
-        <text x="322" y="206">40%</text>
-        <text x="422" y="206">60%</text>
-        <text x="522" y="206" fill="#1c5c52" font-weight="600">80%</text>
-        <text x="622" y="206">100%</text>
+        <text x="122" y="208">0%</text>
+        <text x="222" y="208">20%</text>
+        <text x="322" y="208">40%</text>
+        <text x="422" y="208">60%</text>
+        <text x="522" y="208">80%</text>
+        <text x="622" y="208" fill="#1c5c52" font-weight="600">100%</text>
       </g>
     </svg>
   </figure>
 
-  <!-- ── Visual Animated Story: Normal People Like Us ───────────────── -->
+  <!-- ── Illustrated Animated Ken Slideshow ─────────────────────────── -->
   <p>So what does AI money actually look like for normal people like us?</p>
 
-  <div class="show-wrap" id="ken-show" aria-label="Visual animated comparison of manual fingers versus AI money">
+  <div class="show-wrap" id="ken-show" aria-label="Illustrated comparison of anxious manual Ken versus calm moisturised Ken with AI money">
     <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
 
     <div class="show-tabs">
       <div class="tab-group" role="tablist">
-        <button class="tab-btn active" role="tab" aria-selected="true" data-slide="0">01 · Conditional</button>
-        <button class="tab-btn" role="tab" aria-selected="false" data-slide="1">02 · Multi-step</button>
-        <button class="tab-btn" role="tab" aria-selected="false" data-slide="2">03 · Instant</button>
+        <button class="tab-btn active" role="tab" aria-selected="true" data-slide="0">01 · Dinner</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-slide="1">02 · 2 AM</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-slide="2">03 · Exit liquidity</button>
       </div>
-      <button class="play-btn" id="play-toggle" type="button" aria-label="Pause animation">Pause</button>
+      <button class="play-btn" id="play-toggle" type="button" aria-label="Pause slideshow">Pause</button>
     </div>
 
     <div class="slide-stage">
-      <!-- Slide 1: Conditional (NVDA Earnings) -->
+      <!-- Slide 1: Dinner -->
       <div class="slide active" data-index="0">
-        <div class="versus">
-          <div class="visual-pane fingers">
-            <div class="pane-head"><span><i class="dot"></i>Ken today</span><span class="tag-mini">FINGERS</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="Manual conditional trade missed during work meetings and dinner, sold late at minus 40 percent">
-              <!-- Mental note sticky -->
-              <g class="pop-1">
-                <rect x="12" y="10" width="276" height="40" rx="7" fill="#fff" stroke="#e2ddd2"/>
-                <text x="24" y="26" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">7:40 AM · MENTAL NOTE</text>
-                <text x="24" y="42" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="12" font-weight="700">"If NVDA guides down → sell calls"</text>
-              </g>
-              <!-- Arrow down -->
-              <line x1="150" y1="50" x2="150" y2="70" stroke="#cfc9bc" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <!-- Blocked day pills -->
-              <g class="pop-2">
-                <rect x="12" y="70" width="132" height="44" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="24" y="88" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">10 AM – 6:30 PM</text>
-                <text x="24" y="104" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="700">Meetings · Forgot</text>
-
-                <rect x="156" y="70" width="132" height="44" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="168" y="88" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">7:15 PM · DINNER</text>
-                <text x="168" y="104" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="700">NVDA drops · Missed</text>
-              </g>
-              <!-- Arrow down -->
-              <line x1="150" y1="114" x2="150" y2="134" stroke="#b84a32" stroke-opacity="0.5" stroke-width="1.5"/>
-              <!-- Crash chart strip -->
-              <g class="pop-3">
-                <rect x="12" y="134" width="276" height="46" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.45"/>
-                <polyline points="26,148 72,146 108,151 146,169 194,167" fill="none" stroke="#b84a32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="194" cy="167" r="4" fill="#b84a32"/>
-                <text x="210" y="155" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="8.5">NEXT LUNCH</text>
-                <text x="210" y="170" fill="#b84a32" font-family="Bricolage Grotesque, sans-serif" font-size="13" font-weight="800">SOLD -40%</text>
-              </g>
-            </svg>
-            <div class="pane-foot">Right view · Fumbled execution</div>
-          </div>
-
-          <div class="visual-pane ai">
-            <div class="pane-head"><span><i class="dot"></i>Second Ken</span><span class="tag-mini">AI MONEY</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="AI agent receives one sentence instruction, monitors 24/7 inside approved limits, and executes cleanly at 7:15 PM">
-              <!-- One chat message -->
-              <g class="pop-1">
-                <rect x="12" y="10" width="276" height="44" rx="7" fill="#fff" stroke="#1c5c52" stroke-opacity="0.38"/>
-                <text x="24" y="25" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">7:40 AM · ONE SENTENCE</text>
-                <text x="24" y="42" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="700">"NVDA guides down → exit calls, buy SMH"</text>
-              </g>
-              <!-- Animated watch path -->
-              <line x1="150" y1="54" x2="150" y2="74" stroke="#1c5c52" stroke-width="1.6" class="dash-flow"/>
-              <!-- Live agent watcher -->
-              <g class="pop-2">
-                <rect x="12" y="74" width="276" height="42" rx="7" fill="#fff" stroke="#1c5c52" stroke-opacity="0.28"/>
-                <circle cx="34" cy="95" r="7" fill="#1c5c52" fill-opacity="0.16" class="pulse-ring"/>
-                <circle cx="34" cy="95" r="4" fill="#1c5c52"/>
-                <text x="50" y="92" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="600">AGENT WATCHING · CAP LOCKED</text>
-                <text x="50" y="106" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9">Trigger: rev &lt; midpoint · Kill switch ON</text>
-              </g>
-              <line x1="150" y1="116" x2="150" y2="136" stroke="#1c5c52" stroke-width="1.6" class="dash-flow"/>
-              <!-- Clean receipt -->
-              <g class="pop-3">
-                <rect x="12" y="136" width="276" height="44" rx="7" fill="#1c5c52"/>
-                <circle cx="34" cy="158" r="9" fill="#faf8f3" fill-opacity="0.18"/>
-                <path d="M 30 158 L 33 161 L 39 155" fill="none" stroke="#faf8f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <text x="52" y="154" fill="#faf8f3" font-family="Bricolage Grotesque, sans-serif" font-size="12.5" font-weight="800">EXECUTED · 7:15 PM</text>
-                <text x="52" y="169" fill="#faf8f3" fill-opacity="0.82" font-family="IBM Plex Mono, monospace" font-size="9">Calls closed → SMH bought · Ken at dinner</text>
-              </g>
-            </svg>
-            <div class="pane-foot">Said once · Fired on time</div>
-          </div>
+        <div class="panel-strip">
+          <div class="left"><i class="dot"></i>Anxious Ken · Fingers</div>
+          <div class="right"><i class="dot"></i>Moisturised Ken · AI Money</div>
+        </div>
+        <div class="art-box">
+          <img src="./ken-dinner.jpg" alt="Left: anxious tired Ken hunched under the dinner table secretly checking a crashing chart on his phone while his family eats. Right: calm moisturised Ken laughing over dinner with his family while his phone glows with a serene teal checkmark.">
+        </div>
+        <div class="caption-split">
+          <div class="left">Secretly trading at dinner with family, stressed and late.</div>
+          <div class="right">Fully present at dinner. Conditional exit fired on its own.</div>
         </div>
       </div>
 
-      <!-- Slide 2: Multi-step (A -> B -> C -> D) -->
+      <!-- Slide 2: 2 AM Multi-step -->
       <div class="slide" data-index="1">
-        <div class="versus">
-          <div class="visual-pane fingers">
-            <div class="pane-head"><span><i class="dot"></i>Ken today</span><span class="tag-mini">FINGERS</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="Twelve thousand four hundred USDC sitting idle at zero percent APY for seven months">
-              <g class="pop-1">
-                <rect x="12" y="12" width="276" height="58" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="26" y="32" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9">WALLET BALANCE</text>
-                <text x="26" y="55" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="22" font-weight="800">$12,400 USDC</text>
-                <rect x="206" y="28" width="70" height="24" rx="5" fill="rgba(184,74,50,0.1)"/>
-                <text x="241" y="44" text-anchor="middle" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600">0.0% APY</text>
-              </g>
-              <!-- Broken dotted attempts -->
-              <g class="pop-2">
-                <rect x="12" y="88" width="84" height="34" rx="6" fill="#fff" stroke="#cfc9bc" stroke-dasharray="3 3"/>
-                <text x="54" y="109" text-anchor="middle" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="10">Bridge?</text>
-                <rect x="108" y="88" width="84" height="34" rx="6" fill="#fff" stroke="#cfc9bc" stroke-dasharray="3 3"/>
-                <text x="150" y="109" text-anchor="middle" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="10">Check TVL?</text>
-                <rect x="204" y="88" width="84" height="34" rx="6" fill="#fff" stroke="#cfc9bc" stroke-dasharray="3 3"/>
-                <text x="246" y="109" text-anchor="middle" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="10">Deposit?</text>
-              </g>
-              <g class="pop-3">
-                <rect x="12" y="138" width="276" height="40" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.4"/>
-                <text x="26" y="162" fill="#b84a32" font-family="Bricolage Grotesque, sans-serif" font-size="12.5" font-weight="700" class="blink-slow">"I'll do it this weekend"</text>
-                <text x="274" y="162" text-anchor="end" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="10">MAR → OCT</text>
-              </g>
-            </svg>
-            <div class="pane-foot">Idle 7 months · Too many steps</div>
-          </div>
-
-          <div class="visual-pane ai">
-            <div class="pane-head"><span><i class="dot"></i>Second Ken</span><span class="tag-mini">AI MONEY</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="AI money executing multi-step sequence from USDC to Bridge to TVL check to Yield Vault automatically">
-              <g class="pop-1">
-                <rect x="12" y="12" width="276" height="44" rx="7" fill="#fff" stroke="#1c5c52" stroke-opacity="0.38"/>
-                <text x="24" y="27" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">SAID ONCE · MULTI-STEP (A → B → C → D)</text>
-                <text x="24" y="44" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="700">"Keep $500 liquid · best yield &gt;$100M TVL"</text>
-              </g>
-
-              <!-- Animated 4-node flow pipeline -->
-              <g class="pop-2">
-                <line x1="42" y1="96" x2="258" y2="96" stroke="#1c5c52" stroke-width="2" class="dash-flow"/>
-                <circle r="4" fill="#1c5c52">
-                  <animateMotion dur="2.4s" repeatCount="indefinite" path="M 42 96 L 258 96"/>
-                </circle>
-
-                <rect x="12" y="76" width="60" height="40" rx="6" fill="#fff" stroke="#1c5c52"/>
-                <text x="42" y="95" text-anchor="middle" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600">A</text>
-                <text x="42" y="109" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Swap</text>
-
-                <rect x="84" y="76" width="60" height="40" rx="6" fill="#fff" stroke="#1c5c52"/>
-                <text x="114" y="95" text-anchor="middle" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600">B</text>
-                <text x="114" y="109" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Bridge</text>
-
-                <rect x="156" y="76" width="60" height="40" rx="6" fill="#fff" stroke="#1c5c52"/>
-                <text x="186" y="95" text-anchor="middle" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600">C</text>
-                <text x="186" y="109" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">TVL ok</text>
-
-                <rect x="228" y="76" width="60" height="40" rx="6" fill="#1c5c52"/>
-                <text x="258" y="95" text-anchor="middle" fill="#faf8f3" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600">D</text>
-                <text x="258" y="109" text-anchor="middle" fill="#faf8f3" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Earn</text>
-              </g>
-
-              <g class="pop-3">
-                <rect x="12" y="136" width="276" height="42" rx="7" fill="#1c5c52"/>
-                <text x="26" y="154" fill="#faf8f3" font-family="Bricolage Grotesque, sans-serif" font-size="12.5" font-weight="800">$11,900 EARNING · $500 LIQUID</text>
-                <text x="26" y="169" fill="#faf8f3" fill-opacity="0.82" font-family="IBM Plex Mono, monospace" font-size="9">Auto-rotates if higher yield appears</text>
-              </g>
-            </svg>
-            <div class="pane-foot">Multi-step · Runs automatically</div>
-          </div>
+        <div class="panel-strip">
+          <div class="left"><i class="dot"></i>Exhausted Ken · Fingers</div>
+          <div class="right"><i class="dot"></i>Moisturised Ken · AI Money</div>
+        </div>
+        <div class="art-box">
+          <img src="./ken-midnight.jpg" alt="Left: exhausted Ken slumped at a desk at 2am surrounded by chaotic screens, gears and arrows trying to do multi-step swaps manually. Right: calm Ken sleeping peacefully in bed while four glowing teal nodes execute automatically on his nightstand phone.">
+        </div>
+        <div class="caption-split">
+          <div class="left">Up at 2am manually swapping, bridging, and checking vaults.</div>
+          <div class="right">Asleep by 10pm. Multi-step A → B → C → D ran overnight.</div>
         </div>
       </div>
 
-      <!-- Slide 3: Instant Group Chat Execution -->
+      <!-- Slide 3: Exit liquidity vs Jane Street -->
       <div class="slide" data-index="2">
-        <div class="versus">
-          <div class="visual-pane fingers">
-            <div class="pane-head"><span><i class="dot"></i>Ken today</span><span class="tag-mini">FINGERS</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="Friend drops a trade in group chat, manual user fumbles through four app screens and misses the move">
-              <g class="pop-1">
-                <rect x="12" y="12" width="232" height="42" rx="10" fill="#fff" stroke="#e2ddd2"/>
-                <text x="24" y="27" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9">GROUP CHAT · SAT 11:04 PM</text>
-                <text x="24" y="43" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="12" font-weight="700">"Just aped in, volume ripping"</text>
-              </g>
-
-              <!-- 4 frantic tap boxes -->
-              <g class="pop-2">
-                <rect x="12" y="72" width="63" height="46" rx="6" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="43.5" y="92" text-anchor="middle" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">TAP 1</text>
-                <text x="43.5" y="108" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Open app</text>
-
-                <rect x="83" y="72" width="63" height="46" rx="6" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="114.5" y="92" text-anchor="middle" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">TAP 2</text>
-                <text x="114.5" y="108" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Find pair</text>
-
-                <rect x="154" y="72" width="63" height="46" rx="6" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="185.5" y="92" text-anchor="middle" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">TAP 3</text>
-                <text x="185.5" y="108" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Type size</text>
-
-                <rect x="225" y="72" width="63" height="46" rx="6" fill="#fff" stroke="#b84a32" stroke-opacity="0.35"/>
-                <text x="256.5" y="92" text-anchor="middle" fill="#b84a32" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">TAP 4</text>
-                <text x="256.5" y="108" text-anchor="middle" fill="#3f3b34" font-family="Bricolage Grotesque, sans-serif" font-size="10.5" font-weight="700">Slippage</text>
-              </g>
-
-              <g class="pop-3">
-                <rect x="12" y="136" width="276" height="42" rx="7" fill="#fff" stroke="#b84a32" stroke-opacity="0.45"/>
-                <polyline points="26,168 84,166 138,145 190,147" fill="none" stroke="#b84a32" stroke-width="2" stroke-linecap="round"/>
-                <text x="206" y="155" fill="#b84a32" font-family="Bricolage Grotesque, sans-serif" font-size="12.5" font-weight="800">TOO LATE</text>
-                <text x="206" y="169" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9">Move already gone</text>
-              </g>
-            </svg>
-            <div class="pane-foot">12 taps · Missed the move</div>
-          </div>
-
-          <div class="visual-pane ai">
-            <div class="pane-head"><span><i class="dot"></i>Second Ken</span><span class="tag-mini">AI MONEY</span></div>
-            <svg class="gfx" viewBox="0 0 300 188" role="img" aria-label="Ken replies in the same group chat to his butler with a 300 dollar cap and fills immediately">
-              <g class="pop-1">
-                <rect x="12" y="12" width="220" height="40" rx="10" fill="#fff" stroke="#e2ddd2"/>
-                <text x="24" y="27" fill="#787266" font-family="IBM Plex Mono, monospace" font-size="9">GROUP CHAT · SAT 11:04 PM</text>
-                <text x="24" y="42" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="11.5" font-weight="700">"Just aped in, volume ripping"</text>
-              </g>
-
-              <g class="pop-2">
-                <rect x="44" y="64" width="244" height="46" rx="10" fill="#fff" stroke="#1c5c52" stroke-width="1.4"/>
-                <text x="58" y="80" fill="#1c5c52" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600">KEN · SAME CHAT</text>
-                <text x="58" y="97" fill="#171614" font-family="Bricolage Grotesque, sans-serif" font-size="12" font-weight="700">"@butler copy him, half size, $300 max"</text>
-              </g>
-
-              <line x1="166" y1="110" x2="166" y2="132" stroke="#1c5c52" stroke-width="1.8" class="dash-flow"/>
-
-              <g class="pop-3">
-                <rect x="12" y="132" width="276" height="46" rx="8" fill="#1c5c52"/>
-                <circle cx="34" cy="155" r="9" fill="#faf8f3" fill-opacity="0.18"/>
-                <path d="M 30 155 L 33 158 L 39 152" fill="none" stroke="#faf8f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <text x="52" y="151" fill="#faf8f3" font-family="Bricolage Grotesque, sans-serif" font-size="12.5" font-weight="800">FILLED IN SECONDS</text>
-                <text x="52" y="167" fill="#faf8f3" fill-opacity="0.82" font-family="IBM Plex Mono, monospace" font-size="9">Hard $300 cap locked · Stop-loss set</text>
-              </g>
-            </svg>
-            <div class="pane-foot">One sentence · Capped downside</div>
-          </div>
+        <div class="panel-strip">
+          <div class="left"><i class="dot"></i>Slow Ken · Fingers</div>
+          <div class="right"><i class="dot"></i>Moisturised Ken · AI Money</div>
+        </div>
+        <div class="art-box">
+          <img src="./ken-exit-liq.jpg" alt="Left: panicked Ken tapping his phone as a giant red candlestick crashes behind him and institutional sharks swim ahead. Right: calm moisturised Ken smiling outdoors with an iced coffee while his butler executes cleanly in the background.">
+        </div>
+        <div class="caption-split">
+          <div class="left">Too slow on fingers. Exit liquidity to Jane Street.</div>
+          <div class="right">Calm, unbothered. Agent executed in milliseconds inside his rules.</div>
         </div>
       </div>
     </div>
 
     <div class="show-foot">
-      <span class="show-caption">The second Ken is <em>AI money</em>: systematic, multi-step, conditional, inside boundaries you approve.</span>
+      <span class="show-caption">The second Ken is <em>AI money</em>.</span>
       <div class="nav-btns">
         <button class="nav-btn" id="prev-slide" type="button" aria-label="Previous slide">←</button>
         <button class="nav-btn" id="next-slide" type="button" aria-label="Next slide">→</button>
@@ -548,11 +369,11 @@ footer{
     </div>
   </div>
 
-  <!-- ── Why Now (purely the two unlocks) ───────────────────────────── -->
-  <p>People ask why this happens now when trading bots have been around for twenty years. Two things changed at the exact same time. First, LLMs: natural language is now working code and real-time judgment, so any conditional rule or multi-step trade can be expressed in plain English instead of hiring a developer. Second, onchain permissionless markets: 24/7 global rails with no geo restrictions and no human logins, where software can finally execute across assets around the clock. Put LLMs and permissionless 24/7 markets together, and there is no world where retail money stays manual.</p>
+  <!-- ── Why Now (founder's dictation: infinite demand x infinite supply) ── -->
+  <p>So why should AI money happen now when trading bots have been around for twenty years? Two things. First, LLMs: anyone, with or without technical capability, can now turn plain English into conditional rules or multi-step strategies, straight into working code. Second, onchain permissionless markets: anyone in the world, from any geography, can now have software execute trades for them around the clock. Combine LLMs and permissionless markets together, and you are matching infinite demand (powered by infinite ways to express a trade) with infinite supply (all types of assets with no restrictions).</p>
 
   <!-- ── What Needs to Be Built (founder's three dictated pillars) ──── -->
-  <p>Of course, a more intelligent model alone will not take retail from sub 1% to 80%. Before real money crosses over, three things have to be built.</p>
+  <p>Of course, a more intelligent model alone will not take us from sub 1% to 100%. Before real money crosses over, three things have to be built.</p>
 
   <p>First, <strong>deterministic trust</strong>. Money is money, and every single cent counts. In a world where intelligence is infinite, your AI agent can come up with endless strategies and recommendations on how to make money. Users are fine experimenting with ideas. What is not okay is seeing money go into a black hole. For AI money to work, we need deterministic numbers and absolute confidence in how funds are handled. It is okay to lose money on an idea, as long as it only ever loses within the exact boundaries and constraints you approved.</p>
 
@@ -590,7 +411,7 @@ footer{
   const prevBtn = document.getElementById('prev-slide');
   const nextBtn = document.getElementById('next-slide');
 
-  const DURATION = 5500;
+  const DURATION = 5000;
   let idx = 0;
   let playing = true;
   let hovered = false;
@@ -625,7 +446,7 @@ footer{
   playBtn.addEventListener('click', () => {
     playing = !playing;
     playBtn.textContent = playing ? 'Pause' : 'Play';
-    playBtn.setAttribute('aria-label', playing ? 'Pause animation' : 'Play animation');
+    playBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
   });
   root.addEventListener('mouseenter', () => { hovered = true; });
   root.addEventListener('mouseleave', () => { hovered = false; lastTick = performance.now(); });
