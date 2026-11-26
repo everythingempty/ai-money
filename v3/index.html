@@ -130,11 +130,7 @@ figure.chart-card{
 
 .slide-stage{padding:20px 20px 18px;min-height:336px}
 .slide{display:none}
-.slide.active{display:block;animation:slideReveal .22s ease both}
-@keyframes slideReveal{
-  from{opacity:.6;transform:translateY(3px)}
-  to{opacity:1;transform:translateY(0)}
-}
+.slide.active{display:block}
 .versus{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .visual-pane{
   border-radius:8px;padding:14px 14px 12px;
@@ -176,11 +172,7 @@ figure.chart-card{
   100%{transform:scale(1.65);opacity:0}
 }
 .blink-slow{animation:blinkS 2s ease-in-out infinite}
-@keyframes blinkS{0%,100%{opacity:1}50%{opacity:.35}}
-.slide.active .pop-1{animation:svgPop .3s ease .05s both}
-.slide.active .pop-2{animation:svgPop .3s ease .2s both}
-.slide.active .pop-3{animation:svgPop .3s ease .38s both}
-@keyframes svgPop{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blinkS{0%,100%{opacity:1}50%{opacity:.45}}
 
 .show-foot{
   display:flex;justify-content:space-between;align-items:center;gap:12px;
@@ -617,7 +609,7 @@ footer{
   }
 
   function tick(now) {
-    const dt = now - lastTick;
+    const dt = Math.min(Math.max(0, now - lastTick), 100);
     lastTick = now;
     if (playing && !hovered) {
       elapsed += dt;
